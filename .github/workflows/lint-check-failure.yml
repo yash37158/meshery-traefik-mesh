@@ -30,7 +30,7 @@ jobs:
       
 
       - name: Install linters
-        run: go install golang.org/x/lint/golint
+        run: go install github.com/golang/lint
 
       - name: Lint check
         run: |
