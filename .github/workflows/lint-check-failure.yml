@@ -23,10 +23,11 @@ jobs:
         with:
           go-version: 1.19
 
-      - name: Install golangci-lint
+      - name: Install golangci-lint and golint
         run: |
           curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
           | sh -s -- -b $(go env GOPATH)/bin v1.42.1   
+          go get -u golang.org/x/lint/golint
     
 
       - name: Lint check
