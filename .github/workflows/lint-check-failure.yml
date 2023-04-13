@@ -28,6 +28,9 @@ jobs:
           curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
           | sh -s -- -b $(go env GOPATH)/bin v1.42.1   
 
+      - name: Download missing modules
+        run: go mod download golang.org/x/lint
+        
       - name: Install linters
         run: |
           go install golang.org/x/lint/golint
